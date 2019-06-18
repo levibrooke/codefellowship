@@ -6,6 +6,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDate;
 import java.util.Collection;
 
 public class AppUser implements UserDetails {
@@ -15,6 +16,10 @@ public class AppUser implements UserDetails {
 
     String username;
     String password;
+    String firstName;
+    String lastName;
+    String bio;
+    String dateOfBirth;
 
     public AppUser() {}
 
