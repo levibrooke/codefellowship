@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.security.Principal;
 import java.util.ArrayList;
 
 @Controller
@@ -42,6 +43,13 @@ public class AppUserController {
     @GetMapping("/users/{id}")
     public String getUserById(@PathVariable Long id, Model m) {
         AppUser user = appUserRepository.findById(id).get();
+        m.addAttribute("user", user);
+        return "user-info";
+    }
+
+    @GetMapping("/myprofile")
+    public String getMyProfile(Principal p, Model m) {
+        AppUser user = appUserRepository.findByUsername(p.getName());
         m.addAttribute("user", user);
         return "user-info";
     }
