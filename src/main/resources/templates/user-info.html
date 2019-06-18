@@ -2,11 +2,9 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>User</title>
 </head>
 <body>
-    <h1>Code Fellowship</h1>
-    <a href="/sign-up">Sign Up</a>
-    <a href="/login">Login</a>
+    <h1>User: <span th:text="${user.firstName}"></span></h1>
 </body>
 </html>

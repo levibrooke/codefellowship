@@ -34,6 +34,26 @@ public class AppUser implements UserDetails {
         this.dateOfBirth = dateOfBirth;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;

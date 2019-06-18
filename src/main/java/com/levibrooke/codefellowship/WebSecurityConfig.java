@@ -1,6 +1,6 @@
 package com.levibrooke.codefellowship;
 
-// import com.levibrooke.codefellowship.securedemo.appuser.UserDetailsServiceImpl;
+ import com.levibrooke.codefellowship.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -35,7 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .cors().disable()
                 .csrf().disable()
                 .authorizeRequests()
-                    .antMatchers("/", "/sign-up").permitAll()
+                    .antMatchers("/", "/sign-up", "/login").permitAll()
                     .anyRequest().authenticated()
                 .and()
                 .formLogin()
