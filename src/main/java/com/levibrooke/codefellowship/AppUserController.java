@@ -20,9 +20,9 @@ public class AppUserController {
     @Autowired
     PasswordEncoder bCryptPasswordEncoder;
 
-    @PostMapping("/users")
-    public RedirectView createUser(String username, String password) {
-        AppUser newUser =  new AppUser(username, bCryptPasswordEncoder.encode(password));
+    @PostMapping("/sign-up")
+    public RedirectView createUser(String username, String password, String firstName, String lastName, String bio, String dateOfBirth) {
+        AppUser newUser =  new AppUser(username, bCryptPasswordEncoder.encode(password), firstName, lastName, bio, dateOfBirth);
         appUserRepository.save(newUser);
 
         Authentication authentication = new UsernamePasswordAuthenticationToken(newUser, null, new ArrayList<>());

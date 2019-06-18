@@ -7,11 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 public class CodeFellowshipController {
 
-    @GetMapping("/hello")
-    public String helloWorld() {
-        return "hello";
-    }
-
     @GetMapping("/")
     public String getIndex() {
         return "index";
