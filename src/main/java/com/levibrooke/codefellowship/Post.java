@@ -17,7 +17,7 @@ public class Post {
     @Column(name = "created_at", updatable = false)
     public Date createdAt;
 
-
+    public Post() {}
     public Post(String body) {
         this.body = body;
         this.createdAt = new Date();
@@ -33,5 +33,9 @@ public class Post {
 
     public Date getCreatedAt() {
         return createdAt;
+    }
+
+    public AppUser getAuthor() {
+        return author;
     }
 }

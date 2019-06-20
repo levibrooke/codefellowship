@@ -56,6 +56,10 @@ public class AppUser implements UserDetails {
         return dateOfBirth;
     }
 
+    public List<Post> getPosts() {
+        return posts;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;

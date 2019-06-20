@@ -5,7 +5,19 @@
     <title>User</title>
 </head>
 <body>
-    <h1>User Details</h1>
-    <h2>Name: <span th:text="${user.firstName} + ' ' + ${user.lastName}"></span></h2>
+    <h1>Your Profile</h1>
+    <h2>Username: [[${user.username}]]</h2>
+    <h3>Name: <span th:text="${user.firstName} + ' ' + ${user.lastName}"></span></h3>
+    <h3>Date of Birth: [[${user.dateOfBirth}]]</h3>
+    <h3>Bio:</h3>
+    <p>[[${user.bio}]]</p>
+
+    <hr>
+    <h1>Your Posts:</h1>
+    <a href="/new-post">Create a post</a>
+    <div th:if="${hasPosts}">
+        <div th:replace="{fragments/post :: postsList(posts=${user.posts})}"></div>
+    </div>
+
 </body>
 </html>

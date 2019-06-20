@@ -15,6 +15,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import java.security.Principal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 @Controller
 public class AppUserController {
@@ -66,7 +67,10 @@ public class AppUserController {
     @GetMapping("/myprofile")
     public String getMyProfile(Principal p, Model m) {
         AppUser user = appUserRepository.findByUsername(p.getName());
+        m.addAttribute("principal", p);
         m.addAttribute("user", user);
+//        System.out.println(user.posts.get(0).toString());
+        m.addAttribute("hasPosts", !user.posts.isEmpty());
         return "user-info";
     }
 
