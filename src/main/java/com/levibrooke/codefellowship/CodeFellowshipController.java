@@ -16,4 +16,7 @@ public class CodeFellowshipController {
     public String getSignUp() {
         return "sign-up";
     }
+
+    @GetMapping("/new-post")
+    public String getNewPost() { return "new-post"; }
 }

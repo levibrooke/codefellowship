@@ -5,6 +5,7 @@
     <title>User</title>
 </head>
 <body>
-    <h1>User: <span th:text="${user.firstName}"></span></h1>
+    <h1>User Details</h1>
+    <h2>Name: <span th:text="${user.firstName} + ' ' + ${user.lastName}"></span></h2>
 </body>
 </html>

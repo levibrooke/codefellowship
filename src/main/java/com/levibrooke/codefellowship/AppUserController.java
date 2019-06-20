@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.security.Principal;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 @Controller
@@ -20,6 +21,9 @@ public class AppUserController {
 
     @Autowired
     AppUserRepository appUserRepository;
+
+    @Autowired
+    PostRepository postRepository;
 
     @Autowired
     PasswordEncoder bCryptPasswordEncoder;
@@ -52,5 +56,14 @@ public class AppUserController {
         AppUser user = appUserRepository.findByUsername(p.getName());
         m.addAttribute("user", user);
         return "user-info";
+    }
+
+    @PostMapping("/new-post")
+    public RedirectView createPost(AppUser author, String body, Principal p) {
+        Post newPost = new Post(body);
+        AppUser user = appUserRepository.findByUsername(p.getName());
+        newPost.author = user;
+        postRepository.save(newPost);
+        return new RedirectView("/myprofile");
     }
 }

@@ -1,6 +1,5 @@
-# Lab 16: CodeFellowship Profiles
-
-For your remaining labs before the midterm project, you’ll create an app called CodeFellowship that allows people learning to code to connect with each other and support each other on their coding journeys.
+# Lab 17: CodeFellowship Profiles with Login
+Today, you’ll add login to the CodeFellowship app, and allow users to create posts.
 
 ## Running
 1. Clone this repo
@@ -13,3 +12,9 @@ For your remaining labs before the midterm project, you’ll create an app calle
 `./gradlew bootRun`
 3. Run tests (there are no integration tests yet)
 `./gradlew test`
+
+---
+
+# Lab 16: CodeFellowship Profiles
+
+For your remaining labs before the midterm project, you’ll create an app called CodeFellowship that allows people learning to code to connect with each other and support each other on their coding journeys.
