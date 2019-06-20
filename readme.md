@@ -1,5 +1,4 @@
-# Lab 17: CodeFellowship Profiles with Login
-Today, you’ll add login to the CodeFellowship app, and allow users to create posts.
+# Lab 18: Following Users on CodeFellowship
 
 ## Running
 1. Clone this repo
@@ -12,6 +11,11 @@ Today, you’ll add login to the CodeFellowship app, and allow users to create p
 `./gradlew bootRun`
 3. Run tests (there are no integration tests yet)
 `./gradlew test`
+
+---
+
+# Lab 17: CodeFellowship Profiles with Login
+Today, you’ll add login to the CodeFellowship app, and allow users to create posts.
 
 ---
 
