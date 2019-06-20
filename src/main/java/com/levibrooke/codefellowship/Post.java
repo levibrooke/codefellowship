@@ -1,7 +1,7 @@
 package com.levibrooke.codefellowship;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 public class Post {
@@ -13,12 +13,14 @@ public class Post {
     @ManyToOne
     AppUser author;
     String body;
-    LocalDateTime createdAt;
+
+    @Column(name = "created_at")
+    public Date createdAt;
 
 
-    public Post(String body, LocalDateTime createdAt) {
+    public Post(String body) {
         this.body = body;
-        this.createdAt = createdAt;
+        this.createdAt = new Date();
     }
 
     public long getId() {
@@ -29,7 +31,7 @@ public class Post {
         return body;
     }
 
-    public LocalDateTime getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 }
