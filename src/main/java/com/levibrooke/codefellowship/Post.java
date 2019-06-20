@@ -14,7 +14,7 @@ public class Post {
     AppUser author;
     String body;
 
-    @Column(name = "created_at")
+    @Column(name = "created_at", updatable = false)
     public Date createdAt;
 
 

@@ -28,6 +28,18 @@ public class AppUserController {
     @Autowired
     PasswordEncoder bCryptPasswordEncoder;
 
+    @GetMapping("/")
+    public String getIndex(Principal p, Model m) {
+        m.addAttribute("principal", p);
+        return "index";
+    }
+
+    @GetMapping("/sign-up")
+    public String getSignUp() {
+        return "sign-up";
+    }
+
+
     @PostMapping("/sign-up")
     public RedirectView createUser(String username, String password, String firstName, String lastName, String bio, String dateOfBirth) {
         AppUser newUser =  new AppUser(username, bCryptPasswordEncoder.encode(password), firstName, lastName, bio, dateOfBirth);
@@ -57,6 +69,9 @@ public class AppUserController {
         m.addAttribute("user", user);
         return "user-info";
     }
+
+    @GetMapping("/new-post")
+    public String getNewPost() { return "new-post"; }
 
     @PostMapping("/new-post")
     public RedirectView createPost(AppUser author, String body, Principal p) {
