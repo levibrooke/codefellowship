@@ -7,16 +7,4 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 public class CodeFellowshipController {
 
-    @GetMapping("/")
-    public String getIndex() {
-        return "index";
-    }
-
-    @GetMapping("/sign-up")
-    public String getSignUp() {
-        return "sign-up";
-    }
-
-    @GetMapping("/new-post")
-    public String getNewPost() { return "new-post"; }
 }

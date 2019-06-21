@@ -1,0 +1,8 @@
+<nav th:fragment="header(principal)">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/new-post">Create Post</a></li>
+        <li><a href="/myprofile">User: [[${principal.getName()}]]</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</nav>
