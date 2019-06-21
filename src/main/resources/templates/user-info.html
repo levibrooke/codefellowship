@@ -16,7 +16,7 @@
     <h1>Your Posts:</h1>
     <a href="/new-post">Create a post</a>
     <div th:if="${hasPosts}">
-        <div th:replace="{fragments/post :: postsList(posts=${user.posts})}"></div>
+        <div th:replace="fragments/post :: postsList(posts=${user.posts})"></div>
     </div>
 
 </body>
